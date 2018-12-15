@@ -58,17 +58,12 @@ export CIDR_TEST=`echo $CIDR | grep "\."`
 }
 
 # Function to convert CIDR like /32 to 255.255.255.255
-function convert_cidr {
-export NETMASK=`echo \$cidr_$CIDR`
-}
 
 function print_subnet {
 echo "echo $IP/\$cidr"_$CIDR | bash
-
 
 }
 
 set_variables
 detect_cidr
-convert_cidr
 print_subnet
